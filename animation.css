@@ -1,0 +1,63 @@
+.search-pesqui{
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-bottom: 5px;
+    width: 600px;
+    margin-left: 15vw;
+ 
+  }
+
+.search-input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+    flex-grow: 1;
+}
+  
+.search-input::placeholder {
+    color: #ccc;
+}
+  
+
+.search-icon {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transform: scaleX(-1); 
+    padding: 0;
+}
+  
+.search-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+.base-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background-color: black;
+    width: 100%; /* Ocupa todo o comprimento */
+}
+.animation_bar{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background-color: #DAA520;
+    width: 0;
+    animation: loadBar 2s ease-out forwards;
+}
+  
+@keyframes loadBar {
+0% {
+    width: 0;
+}
+100% {
+    width: 89%; 
+}
+}
