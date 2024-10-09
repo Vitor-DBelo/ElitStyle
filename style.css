@@ -105,335 +105,146 @@ body, html {
 
 
 
-main{
-    height: 100%;
-}
-.content{
+
+.search-pesqui{
     display: flex;
-    height: 100vh;
-    margin: 0 auto;
-    gap: 20px;
-    margin-left: 80px;
     align-items: center;
-    justify-content: center;
-    
-}
-.img-container{
-    display: flex;
-}
-.img-container img{
-    max-width: 550px;
-    max-height: 550px;
-    margin: 20px;
-    justify-content: center;
-    align-items: center;
-}
-.texto p {
-    width: 50%;
-    height: 50%;
-    font-size: 25px;
-    margin-left: 150px;
-    text-align: justify;
-    font-family: Arial, Helvetica, sans-serif;
-  
-}
-.produtos_destaque {
-    width: 100%;
-    margin-top: 20px;
-    margin-bottom: 50px;
-    top: 0;
-    padding: 0;
     position: relative;
-}
+    padding-bottom: 5px;
+    width: 600px;
+    margin-left: 15vw;
+ 
+  }
 
-.title_grid {
-    display: flex;
-    justify-content: left;
-    width: 100%; 
-    padding: 0;
-    margin-left: 293px;
-    
+.search-input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+    flex-grow: 1;
 }
-
-.title_produtos {
-    text-align: left;
-    background-color: #333;
-    padding: 5px 10px;
-    margin: 15px;
-}
-
-.title_produtos a {
-    color: yellow;
-    text-decoration: none;
-    font-size: 24px;
-
-}
-
-.grid_produtos_destaque {
-    display: grid;
-    grid-template-columns: repeat(4, 350px);
-	grid-template-rows: repeat(2, 400px);
-    justify-content: center;
-    margin-left: 150px;
-    padding: 0;
-}
-
-.item{
-    width: 260px;
-    
-}
-.item img {
-    width: 260px;
-    height: auto;
-}
-.item p {
-    width: 100%;
-    margin-top: 2px;
-    margin: 0;
-    font-size: 22px;
-    text-align: justify;
+  
+.search-input::placeholder {
     color: #ccc;
 }
-.menu-icon img {
-    width: 40px;
-    height: 40px;
+  
+
+.search-icon {
+    background: transparent;
+    border: none;
     cursor: pointer;
-    display: none;
-    
+    transform: scaleX(-1); 
+    padding: 0;
 }
-.Sec-carousel {
-    width: 100%;
-    height: 50vh;
-    margin-top: 100px;
-    margin-bottom: 30px;
+  
+.search-icon img {
+    width: 24px;
+    height: 24px;
 }
 
-.carousel {
+.base-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background-color: black;
+    width: 100%; /* Ocupa todo o comprimento */
+}
+.animation_bar{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background-color: #DAA520;
+    width: 0;
+    animation: loadBar 2s ease-out forwards;
+}
+  
+@keyframes loadBar {
+0% {
+    width: 0;
+}
+100% {
+    width: 89%; 
+}
+}
+
+main-produto{
+    height: 100%;
+    width: 100%;
+}
+
+.content-pg-Produto{
+    height: 60%;
+    margin-top: 67px;
+    margin-bottom: 5px;
     display: flex;
-    align-items: center;
+    gap: 30px;
     justify-content: center;
+}
+.produto-descri{
+    width: 50%;
+    text-align: justify;
+    margin-left: 100px;
+    margin-right: 200px;
+}
+.produto-descri p{
+    width: 300px;
+}
+.produto-descri img{
+    width: 300px;
+    height: 300px; 
+}
+.produto-info{
+    margin-top: 35px;
+    width: 30%;
+}
+.button-submit{
+    width: 300px;
+    display: block;
+    margin: 0;
+}
+.button-submit button{
+    width: 300px;
+    height: 35px;
+    margin-bottom: 10px;
+    background-color: #2e2e2e;
+    border: 0;
+    cursor: pointer;
+}
+.button-submit button:hover{
+    background-color: #FFD700;
+    
+}
+.carousel-proprock {
+    height: 200px;
+    width: 100%;
     position: relative;
 }
 
-.carousel-container {
-    margin-top: 50px;
-}
-
-.carousel-track-container {
-    overflow: hidden;
-    width: 36%; /* Aumentando a largura para evitar corte da imagem da direita */
-    margin: 0 30px; 
-}
-
-.carousel-track {
-    width: 100%;
+.carousel-prock {
     display: flex;
-    transition: transform 0.5s ease;
+    gap: 20px;
+    animation: slide 30s linear infinite;
 }
 
-.carousel-slide {
-    min-width: 150px;
-    height: 150px;
-    padding: 0; /* Remover o padding para a imagem preencher todo o espaço */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    border-radius: 100%;
-    margin: 0 10px;
-    overflow: hidden;  
-}
-
-.carousel-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    border-radius: 50%; 
-}
-
-.prev, .next {
-    font-size: 50px;
-    color: #FFD700;
-    cursor: pointer;
-    background-color: transparent;
+.item-carousel-roll img {
+    width: 158px;
+    height: 157px;
 }
 
 
-@media screen and (max-width: 1628px){
-    .logo{
-        transform: scale(1.3); 
-        transform-origin: left;
-        width: 100px;
-    }  
-    .search-pesqui {
-        margin-right: 30px;
+@keyframes slide {
+    0% {
+        transform: translateX(100%);
     }
-    .content{
-        width: 100%;
-        height: 100vh;
+    100% {
+        transform: translateX(-100%);
     }
-    .img-container{
-        width: 50%;
-    }
-    .img-container img{
-        max-width: 350px;
-        max-height: auto;
-        margin: 20px;
-        justify-content: center;
-        align-items: center;
-    }
-    .texto {
-        width: 50%;
-    }
-    .grid_produtos_destaque {
-        display: grid;
-        grid-template-columns: repeat(4, 350px);
-        grid-template-rows: repeat(2, 450px);
-        justify-content: center;
-        margin: 0;
-        margin-left: 100px;
-        padding: 20px;
-    }
-    
-    
 }
 
-@media screen and (min-width: 100px) and (max-width: 1024px) {
-    .Nav_Bar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: auto;
-        padding: 10px;
-        position: relative;
-    }
-
-    .logo {
-        transform: scale(1.4); 
-        transform-origin: left;
-        width: 100px;
-        margin-left: 3px;
-    }
-
-    .search-pesqui {
-        display: flex;
-        align-items: center;
-        position: relative;
-        width: 50vw; 
-        max-width: 400px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .search-input {
-        border: none;
-        outline: none;
-        background-color: transparent;
-        color: white;
-        font-size: 16px;
-        flex-grow: 1;
-    }
-   
-
-    .menu-icon {
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    .menu-icon img {
-        display: block;
-        width: 30px;
-        height: 30px;
-        margin-left: 0; 
-    }
-    .nav-links a, .nav-links img {
-        display: none;
-    }
- 
-   
-}
-@media screen and (max-width: 460px) {
-    .content {
-        width: 100%;
-        flex-direction: column;
-        display: block;
-        margin: 0;
-    }
-
-    .content img {
-        width: 187px;
-        height: auto;
-        margin: 0;
-    }
-
-    .img-container {
-        display: flex;
-        justify-content: center;
-        margin-left: 100px;
-        margin-top: 20px;
-        gap: 2px;
-    }
-
-    .content .texto {
-        margin-top: 60px;
-        width: 100%; 
-        padding-left: 8px; 
-        padding-right: 8px; 
-    }
-
-    .texto p {
-        text-align: justify; 
-        width: 100%;
-        margin: 0;
-        margin-right: 20px;
-        font-size: 25px;
-    }
-   
-    .produtos_destaque{
-        width: 100%;
-        margin-top: 20px;
-        position: relative; 
-        padding: 0;
-        margin-bottom: 50px;
-    }
-    .grid_produtos_destaque {
-        grid-template-columns: repeat(1, 1fr); 
-        margin: 0;
-    }
-
-    .title_grid {
-        margin: 0; 
-        margin-left: 5px;
-    }  
-    .grid_produtos_destaque {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); 
-        justify-content: center;
-        padding: 20px;
-        margin-left: 0;
-    }
-    .title_grid{
-        justify-content: left;
-    }
-    .item{
-        width: 100%;
-        height: auto;
-        margin-bottom: 50px;
-    }
-    .item p {
-       width: 100%;
-       justify-content: left;
-       text-align: justify;
-       margin: 0;
-    }
-    .item img{
-        width: 350px;
-        height: auto;
-        display: block;
-    }
-    .Sec-carousel{
-        display: none;
-    }
+/* Para quando o mouse passar por cima */
+.carousel-proprock:hover .carousel-prock {
+    animation-play-state: paused;
 }
